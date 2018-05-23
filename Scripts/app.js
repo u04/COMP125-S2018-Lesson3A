@@ -2,10 +2,12 @@
 
 // IIFE - Immediately Invoked Function Expression
 // anonymous self executing function
-(function () {
+let app = (function () {
     "use strict"
 
+
     // About Button Click event handler
+
     function AboutButtonClick() {
         console.log("About Button Clicked!");
     }
@@ -42,6 +44,19 @@
         let mySentence = "'Say 'gosh' or nothing instead of 'g**', and 'heck' or nothing instead of 'h***', and just don't say mild verson of the S-word 'c***' so that your tv show is accepted by more channels";
 
         paragraph.textContent = mySentence;
+
+        let myArray = [
+            { name: "tom", age: 25 },
+            { name: "tod", age: 6 },
+            { name: "top", age: 275 },
+
+        ];
+
+        myArray.push({ name: "tofp", age: 15 });
+
+        let content = document.getElementsByClassName("content");
+        console.log(myArray);
+        console.log("my arrray llngth" + myArray.length);
     }
 
     function Start() {
@@ -66,7 +81,12 @@
         }
     }
 
+
     //window.onload = Start;
 
     window.addEventListener("load", Start);
+
+    return {
+        title: document.title,
+    };
 })();
